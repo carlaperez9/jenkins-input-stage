@@ -30,10 +30,10 @@ class ReleaseDetails{
     }   
 
     def reverseOrder(myUnsortedChoices){ 
-        def names    = ['name', 'name', 'name']
+        def myNameList    = ['name', 'name', 'name']
         def mySortedChoices = []
-        myUnsortedChoices.eachWithIndex { names, index -> 
-            mySortedChoices << "${names}-${myUnsortedChoices[index]}"
+        myNameList.eachWithIndex { name, index -> 
+            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
         }
 
         return mySortedChoices
