@@ -29,14 +29,10 @@ class ReleaseDetails{
         jenkinsSteps.println "${myInputs}"
     }   
 
-    def reverseOrder(myUnsortedChoices){ 
-        def myNameList    = ['name', 'name', 'name']
-        def mySortedChoices = []
-        myNameList.eachWithIndex { name, index -> 
-            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
-        }
+    def reverseOrder(myUnsortedChoices) { 
+        
+        def mySortedChoices = myUnsortedChoices.sort { a, b -> b <=> a }
 
         return mySortedChoices
-
     }
 }
