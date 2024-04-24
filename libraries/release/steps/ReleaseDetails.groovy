@@ -16,7 +16,7 @@ class ReleaseDetails{
         // Using the input step within an input block
         def myInputs = jenkinsSteps.input(
             ok: 'Confirm', // Specify an ID for the input step
-            message: "${message}",
+            message: "${messageRelease}",
             parameters: [
                 jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
                 jenkinsSteps.choice(name: "First choice", choices: myChoices, description: "This is the first choice."), 
