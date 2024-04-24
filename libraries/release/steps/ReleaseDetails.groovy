@@ -33,7 +33,7 @@ class ReleaseDetails{
         def names    = ['name', 'name', 'name']
         def mySortedChoices = []
         myUnsortedChoices.eachWithIndex { names, index -> 
-            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
+            mySortedChoices << "${names}-${myUnsortedChoices[index]}"
         }
 
         return mySortedChoices
