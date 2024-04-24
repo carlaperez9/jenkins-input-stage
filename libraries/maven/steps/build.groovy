@@ -1,5 +1,5 @@
 void call(){
-  stage("Maven: Build){
+  stage("Maven: Build"){
         println "build from the maven library"
   }
 }
