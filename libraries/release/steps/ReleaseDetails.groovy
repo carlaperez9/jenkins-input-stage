@@ -13,7 +13,7 @@ class ReleaseDetails{
         def message = "This is my message."
 
         // Using the input step within an input block
-        def myInputs = input(
+        def myInputs = jenkinsSteps.input(
             id: 'userInput', // Specify an ID for the input step
             message: "${message}",
         )
