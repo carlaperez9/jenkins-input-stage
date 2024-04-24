@@ -16,6 +16,10 @@ class ReleaseDetails{
         def myInputs = jenkinsSteps.input(
             id: 'userInput', // Specify an ID for the input step
             message: "${message}",
+            parameters: [
+                jenkinsSteps.choice(name: "First choice", choices: myChoices, description: "This is the first choice."), 
+                jenkinsSteps.choice(name: "Second choice", choices: myChoices, description: "This is the second choice."),
+            ]
         )
 
         jenkinsSteps.println "${myInputs}"
