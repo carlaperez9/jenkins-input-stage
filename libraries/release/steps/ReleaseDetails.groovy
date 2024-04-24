@@ -9,9 +9,11 @@ class ReleaseDetails{
     void run() {
         jenkinsSteps.println "Running release details!"
 
-        def myChoices = ['Choco', 'Platon', 'Luna']
+    
+        def myUnsortedChoices = ['0.1.0', '0.1.1', '0.1.2']
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
+        def mySortedChoices = reverseOrder(myUnsortedChoices)
 
         // Using the input step within an input block
         def myInputs = jenkinsSteps.input(
@@ -19,11 +21,22 @@ class ReleaseDetails{
             message: "${messageRelease}",
             parameters: [
                 jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
-                jenkinsSteps.choice(name: "First choice", choices: myChoices, description: "This is the first choice."), 
+                jenkinsSteps.choice(name: "First choice", choices: mySortedChoices, description: "This is the first choice."), 
                 jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
             ]
         )
 
         jenkinsSteps.println "${myInputs}"
     }   
+
+    def reverseOrder(myUnsortedChoices){ 
+        def name    = ['name', 'name', 'name']
+        def mySortedChoices = []
+        myUnsortedChoices.eachWithIndex { name, index -> 
+            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
+        }
+
+        return mySortedChoices
+
+    }
 }
