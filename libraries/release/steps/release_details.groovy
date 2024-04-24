@@ -1,4 +1,4 @@
-import workflow.ReleaseDetails
+import release.workflow.ReleaseDetails
 
 void call(){
   stage("Release Details"){

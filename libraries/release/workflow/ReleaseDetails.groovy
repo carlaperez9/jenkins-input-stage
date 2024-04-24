@@ -1,3 +1,4 @@
+package release.workflow 
 
 class ReleaseDetails(){ 
 
