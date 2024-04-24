@@ -1,6 +1,6 @@
 void call() {
   stage("Release Details") {
-    ReleaseDetails releaseDetails = new release.workflow.ReleaseDetails(this)
+    ReleaseDetails releaseDetails = new ReleaseDetails(this)
     releaseDetails.run()
   }
 }
