@@ -10,7 +10,7 @@ class ReleaseDetails{
         jenkinsSteps.println "Running release details!"
 
     
-        def myUnsortedChoices = ['4.1.0','0.1.0', '0.1.1', '0.1.2']
+        def myUnsortedChoices = ['4.1.0', '4.2.2', '4.3.1', '0.1.0', '0.1.1', '0.1.2']
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         def mySortedChoices = reverseOrder(myUnsortedChoices)
@@ -30,7 +30,7 @@ class ReleaseDetails{
     }   
 
     def reverseOrder(myUnsortedChoices){ 
-        def myNameList    = ['name','name', 'name', 'name']
+        def myNameList    = ['name','name','name','name', 'name', 'name']
         def mySortedChoices = []
         myNameList.eachWithIndex { name, index -> 
             mySortedChoices << "${name}-${myUnsortedChoices[index]}"
