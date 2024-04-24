@@ -1,5 +1,8 @@
+import release.workflow.ReleaseDetails
+
 void call(){
   stage("Release Details"){
-    println "running release stage"
+    ReleaseDetails releaseDetails = new ReleaseDetails(this)
+    releaseDetails.run()
   }
 }
