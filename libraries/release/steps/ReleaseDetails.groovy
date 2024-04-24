@@ -1,4 +1,4 @@
-class ReleaseDetails{ 
+class ReleaseDetails { 
 
     def jenkinsSteps 
 
@@ -9,11 +9,10 @@ class ReleaseDetails{
     void run() {
         jenkinsSteps.println "Running release details!"
 
-    
-        def myUnsortedChoices = ['4.1.0', '4.2.2', '4.3.1', '0.1.0', '0.1.1', '0.1.2']
+        def myUnsortedChoices = ['0.1.0', '0.1.1', '0.1.2', '4.1.0', '4.1.2']
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
-        def mySortedChoices = reverseOrder(myUnsortedChoices)
+        def mySortedChoices = reverseOrder(new ArrayList<>(myUnsortedChoices))
 
         // Using the input step within an input block
         def myInputs = jenkinsSteps.input(
@@ -29,7 +28,7 @@ class ReleaseDetails{
         jenkinsSteps.println "${myInputs}"
     }   
 
-     def reverseOrder(myUnsortedChoices) { 
+    def reverseOrder(myUnsortedChoices) { 
         // Sort the list in descending order based on version numbers
         def mySortedChoices = myUnsortedChoices.sort { a, b -> compareVersions(b, a) }
 
