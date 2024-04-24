@@ -1,5 +1,3 @@
-package release.workflow 
-
 class ReleaseDetails(){ 
 
     def jenkinsSteps 
