@@ -16,7 +16,8 @@ class ReleaseDetails{
             ok: "Confirm", 
             message: "${message}", 
             parameters: [
-                choice(name: 'First choice', choices: myChocies, description: "This is a dummy choice.")
+                choice(name: 'First choice', choices: myChocies, description: "This is a dummy choice."), 
+                choice(name: 'Second choice', choices: myChoices, description: "This is a second dummy choice"),
             ]
         )
 
