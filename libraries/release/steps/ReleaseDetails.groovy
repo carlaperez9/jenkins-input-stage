@@ -30,7 +30,7 @@ class ReleaseDetails{
     }   
 
     def reverseOrder(myUnsortedChoices){ 
-        def name    = ['name', 'name', 'name']
+        def names    = ['name', 'name', 'name']
         def mySortedChoices = []
         myUnsortedChoices.eachWithIndex { name, index -> 
             mySortedChoices << "${name}-${myUnsortedChoices[index]}"
