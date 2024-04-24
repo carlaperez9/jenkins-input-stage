@@ -18,7 +18,7 @@ class ReleaseDetails{
             ok: 'Confirm', // Specify an ID for the input step
             message: "${message}",
             parameters: [
-                jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next.")
+                jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
                 jenkinsSteps.choice(name: "First choice", choices: myChoices, description: "This is the first choice."), 
                 jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
             ]
