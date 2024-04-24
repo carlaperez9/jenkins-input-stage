@@ -29,14 +29,25 @@ class ReleaseDetails{
         jenkinsSteps.println "${myInputs}"
     }   
 
-    def reverseOrder(myUnsortedChoices){ 
-        def myNameList    = ['name','name','name','name', 'name', 'name']
-        def mySortedChoices = []
-        myNameList.eachWithIndex { name, index -> 
-            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
-        }
+     def reverseOrder(myUnsortedChoices) { 
+        // Sort the list in descending order based on version numbers
+        def mySortedChoices = myUnsortedChoices.sort { a, b -> compareVersions(b, a) }
 
         return mySortedChoices
+    }
 
+    def compareVersions(version1, version2) {
+        def v1 = version1.tokenize('.').collect { it.toInteger() }
+        def v2 = version2.tokenize('.').collect { it.toInteger() }
+
+        // Compare each version component starting from left to right
+        for (int i = 0; i < Math.min(v1.size(), v2.size()); i++) {
+            if (v1[i] != v2[i]) {
+                return v1[i] <=> v2[i]
+            }
+        }
+        
+        // If all components are equal up to this point, the longer version is considered higher
+        return v1.size() <=> v2.size()
     }
 }
