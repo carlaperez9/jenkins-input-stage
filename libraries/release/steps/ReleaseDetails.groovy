@@ -10,7 +10,7 @@ class ReleaseDetails{
         jenkinsSteps.println "Running release details!"
 
     
-        def myUnsortedChoices = ['0.1.0', '0.1.1', '0.1.2']
+        def myUnsortedChoices = ['4.1.0','0.1.0', '0.1.1', '0.1.2']
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         def mySortedChoices = reverseOrder(myUnsortedChoices)
@@ -29,23 +29,14 @@ class ReleaseDetails{
         jenkinsSteps.println "${myInputs}"
     }   
 
-    def reverseOrder(myUnsortedChoices) { 
-    // Sort the list in descending order
-        def mySortedChoices = myUnsortedChoices.sort { a, b -> compareVersions(b, a) }
+    def reverseOrder(myUnsortedChoices){ 
+        def myNameList    = ['name','name', 'name', 'name']
+        def mySortedChoices = []
+        myNameList.eachWithIndex { name, index -> 
+            mySortedChoices << "${name}-${myUnsortedChoices[index]}"
+        }
 
         return mySortedChoices
-    }
 
-    def compareVersions(version1, version2) {
-        def v1 = version1.tokenize('.').collect { it.toInteger() }
-        def v2 = version2.tokenize('.').collect { it.toInteger() }
-        
-        for (int i = 0; i < Math.min(v1.size(), v2.size()); i++) {
-            if (v1[i] != v2[i]) {
-                return v1[i] <=> v2[i]
-            }
-        }
-        
-        return v1.size() <=> v2.size()
     }
 }
