@@ -1,4 +1,4 @@
-class ReleaseDetails(){ 
+class ReleaseDetails{ 
 
     def jenkinsSteps 
 
