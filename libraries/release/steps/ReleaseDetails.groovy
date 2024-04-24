@@ -30,9 +30,22 @@ class ReleaseDetails{
     }   
 
     def reverseOrder(myUnsortedChoices) { 
-        
-        def mySortedChoices = myUnsortedChoices.sort { a, b -> b <=> a }
+    // Sort the list in descending order
+        def mySortedChoices = myUnsortedChoices.sort { a, b -> compareVersions(b, a) }
 
         return mySortedChoices
+    }
+
+    def compareVersions(version1, version2) {
+        def v1 = version1.tokenize('.').collect { it.toInteger() }
+        def v2 = version2.tokenize('.').collect { it.toInteger() }
+        
+        for (int i = 0; i < Math.min(v1.size(), v2.size()); i++) {
+            if (v1[i] != v2[i]) {
+                return v1[i] <=> v2[i]
+            }
+        }
+        
+        return v1.size() <=> v2.size()
     }
 }
