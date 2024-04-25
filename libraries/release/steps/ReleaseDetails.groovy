@@ -33,8 +33,7 @@ class ReleaseDetails{
     def reverseOrder(myUnsortedChoices){ 
 
         myUnsortedChoices.eachWithIndex { choice, index -> 
-            choice.split("\\.")
-            jenkinsSteps.println "${choice}"
+            jenkinsSteps.println "${choice.split("\\.")}"
         }
 
     }
