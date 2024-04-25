@@ -14,7 +14,7 @@ class ReleaseDetails{
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
-        reverseOrder(myUnsortedChoices)
+        reverseOrder()
 
         // Using the input step within an input block
         def myInputs = jenkinsSteps.input(
@@ -30,7 +30,7 @@ class ReleaseDetails{
         jenkinsSteps.println "${myInputs}"
     }
 
-    def reverseOrder(myUnsortedChoices){ 
+    def reverseOrder(){ 
         def version = ['1.1.0', '1.0.1', '4.0.0']
 
         version.sort { a, b -> 
