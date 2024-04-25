@@ -34,11 +34,11 @@ class ReleaseDetails{
         def versions = ['1.1.0', '1.0.1', '4.0.0', '4.1.2']
         def mySortedList = []
 
-        for (version in versions){ 
+        for (int i =0, i <= versions.size(), i++){ 
             jenkinsSteps.println "version[0]: ${version[0]}"
         }
         
-        }
+    }
  
 }
 
