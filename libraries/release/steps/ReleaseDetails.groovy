@@ -43,7 +43,7 @@ class ReleaseDetails{
 
         }
  
-    }
+}
 
     
 
@@ -52,4 +52,3 @@ class ReleaseDetails{
      
 
     
-}
