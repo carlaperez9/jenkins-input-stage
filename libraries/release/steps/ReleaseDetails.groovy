@@ -31,11 +31,24 @@ class ReleaseDetails{
     }
 
     def reverseOrder(myUnsortedChoices){ 
+        def version = ['1.1.0', '1.0.1', '4.0.0']
+        def names   = ["myName", "myName", "myName"]
 
-        myUnsortedChoices.eachWithIndex { choice, index -> 
-            jenkinsSteps.println "${choice.split("\\.")}"
+        // sort through version list based on numeric values in descending order 
+
+        version.sort { a, b -> 
+            def numA = a.split('\\.').collect { it as Integer }
+            def numB = b.split('\\.').collect { it as Integer }
+            return numB <=> numA 
         }
 
+        def myFinalList = []
+
+        names.eachWithIndex { name, index -> 
+            myFinalList << "${name}-${version[index]}"
+        }
+
+        jenkinsSteps.println myFinalList
     }
 
     
