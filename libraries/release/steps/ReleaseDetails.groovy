@@ -32,7 +32,7 @@ class ReleaseDetails{
 
     def reverseOrder(){ 
         def version = ['1.1.0', '1.0.1', '4.0.0']
-        mySortedList = []
+        def mySortedList = []
 
         mySortedList = version.sort { a, b ->  b <=> a }
         jenkinsSteps.println "version: ${version}"
