@@ -44,6 +44,8 @@ class ReleaseDetails{
                 }
             }
 
+            jenkinsSteps.println "numV1: ${numV1}"
+
         return numV2.size() <=> numV1.size()
 
         }
