@@ -35,7 +35,7 @@ class ReleaseDetails{
         def mySortedList = []
 
         for (int i = 0; i <= versions.size(); i++){ 
-            jenkinsSteps.println "version[0]: ${version[0]}"
+            jenkinsSteps.println "versions[0]: ${versions[0]}"
         }
         
     }
