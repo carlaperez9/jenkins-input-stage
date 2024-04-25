@@ -34,21 +34,20 @@ class ReleaseDetails{
         def version = ['1.1.0', '1.0.1', '4.0.0']
         def names   = ["myName", "myName", "myName"]
 
-        // sort through version list based on numeric values in descending order 
+        def compareVersions = {v1, v2 -> 
+            def numV1 = v1.tokenize('.').collect { it as Integer }
+            def numV2 = v2.tokenize('.').collect { it as Integer }
 
-        version.sort { a, b -> 
-            def numA = a.split('\\.').collect { it as Integer }
-            def numB = b.split('\\.').collect { it as Integer }
-            return numB <=> numA 
+            for (int i = 0; i < Math.min(numV1.size(), numV2.size()); i++) {
+                if (numV1[i] != numV2[i]) {
+                return numV2[i] <=> numV1[i] // Compare in descending order
+                }
+            }
+
+        return numV2.size() <=> numV1.size()
+
         }
-
-        def myFinalList = []
-
-        names.eachWithIndex { name, index -> 
-            myFinalList << "${name}-${version[index]}"
-        }
-
-        jenkinsSteps.println myFinalList
+ 
     }
 
     
