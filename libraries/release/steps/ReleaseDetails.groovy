@@ -31,15 +31,13 @@ class ReleaseDetails{
     }
 
     def reverseOrder(){ 
-        def version = ['1.1.0', '1.0.1', '4.0.0']
+        def versions = ['1.1.0', '1.0.1', '4.0.0', '4.1.2']
         def mySortedList = []
 
-        mySortedList = version.sort { a, b ->  b <=> a }
-        jenkinsSteps.println "version: ${version}"
-        jenkinsSteps.println "mySortedList: ${mySortedList}"
-
-        return version 
-
+        for (version in versions){ 
+            jenkinsSteps.println "version[0]: ${version[0]}"
+        }
+        
         }
  
 }
