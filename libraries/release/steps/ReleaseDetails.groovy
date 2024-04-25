@@ -32,21 +32,14 @@ class ReleaseDetails{
 
     def reverseOrder(myUnsortedChoices){ 
         def version = ['1.1.0', '1.0.1', '4.0.0']
-        def names   = ["myName", "myName", "myName"]
 
-        def compareVersions = {v1, v2 -> 
-            def numV1 = v1.tokenize('.').collect { it as Integer }
-            def numV2 = v2.tokenize('.').collect { it as Integer }
+        version.sort { a, b -> 
+        b <=> a 
+        }
 
-            for (int i = 0; i < Math.min(numV1.size(), numV2.size()); i++) {
-                if (numV1[i] != numV2[i]) {
-                return numV2[i] <=> numV1[i] // Compare in descending order
-                }
-            }
+        jenkinsSteps.println "version: ${version}"
 
-            jenkinsSteps.println "numV1: ${numV1}"
-
-        return numV2.size() <=> numV1.size()
+        return version 
 
         }
  
