@@ -35,8 +35,8 @@ class ReleaseDetails{
     }
 
     def compareVersions(version1, version2) {
-        def v1 = version1.tokenize('.').collect { it.toInteger() }
-        def v2 = version2.tokenize('.').collect { it.toInteger() }
+        def v1 = version1.tokenize('.').collect { it.toString() }
+        def v2 = version2.tokenize('.').collect { it.toString() }
 
         // Compare each version component starting from left to right
         for (int i = 0; i < Math.min(v1.size(), v2.size()); i++) {
