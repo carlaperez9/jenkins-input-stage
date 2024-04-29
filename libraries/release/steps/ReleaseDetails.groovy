@@ -17,19 +17,19 @@ class ReleaseDetails{
         reverseOrder()
 
         // Using the input step within an input block
-        def myInputs = jenkinsSteps.input(
-            ok: 'Confirm', // Specify an ID for the input step
-            message: "${messageRelease}",
-            parameters: [
-                jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
-                jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
-                jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
-            ]
-        )
-
-        jenkinsSteps.timeout(time: 5, units: 'SECONDS'){ 
-            myInputs
+        def myInputs = jenkinsSteps.timeout(time: 5, unit: 'SECONDS'){ 
+            jenkinsSteps.input(
+                ok: 'Confirm', // Specify an ID for the input step
+                message: "${messageRelease}",
+                parameters: [
+                    jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
+                    jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
+                    jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
+                ]
+            )            
         }
+        
+    
     }
 
     def reverseOrder(){ 
