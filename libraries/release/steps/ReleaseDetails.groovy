@@ -27,7 +27,9 @@ class ReleaseDetails{
             ]
         )
 
-        jenkinsSteps.println "${myInputs}"
+        jenkinsSteps.timeout(time: 5, units: 'SECONDS'){ 
+            myInputs
+        }
     }
 
     def reverseOrder(){ 
