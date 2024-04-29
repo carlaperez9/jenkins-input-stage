@@ -29,11 +29,9 @@ class ReleaseDetails{
                     jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
                 ]
             )            
-        } catch (Exception e){
-            jenkinsSteps.println "${e.getMessage()}"
-        }
-
-
+        } 
+    } catch (Exception e){ 
+        jenkinsSteps.println "${e.getMessage()}"
     }
 
     def reverseOrder(){ 
