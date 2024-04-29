@@ -16,6 +16,7 @@ class ReleaseDetails{
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
 
+        try { 
         // Using the input step within an input block
         def releaseTimeout = jenkinsSteps.timeout(time: 5, unit: 'SECONDS'){ 
             def input = jenkinsSteps.input(
@@ -30,6 +31,11 @@ class ReleaseDetails{
         }
         
         jenkinsSteps.println "input: ${input}"
+        } catch (Exception e){
+            jenkinsSteps.println "${e.getMessage()}"
+        }
+
+
     }
 
     def reverseOrder(){ 
