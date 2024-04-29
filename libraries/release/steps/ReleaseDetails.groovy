@@ -34,7 +34,10 @@ class ReleaseDetails{
         jenkinsSteps.println "${e.getMessage()}"
     }
 
-    def reverseOrder(){ 
+   
+ 
+}
+ def reverseOrder(){ 
         def versions = ['1.1.0', '1.0.1', '4.0.0', '4.1.2']
         def mySortedList = []
 
@@ -43,9 +46,6 @@ class ReleaseDetails{
         }
         
     }
- 
-}
-
 }
 
     
