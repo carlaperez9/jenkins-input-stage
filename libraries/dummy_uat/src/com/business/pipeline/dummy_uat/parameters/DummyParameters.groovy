@@ -18,6 +18,7 @@ class DummyParameters implements Parameters {
                 jenkinsSteps.parameters(addParameters())
             ])
         }
+    }
         
 
     def addParameters(){ 
