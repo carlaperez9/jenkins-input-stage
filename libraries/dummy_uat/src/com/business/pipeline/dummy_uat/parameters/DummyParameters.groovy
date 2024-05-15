@@ -20,7 +20,6 @@ class DummyParameters implements Parameters {
 
     def addParameters(){ 
          def parameters = [
-            jenkinsSteps.booleanParam(name: 'working_parameters', defaultValue: false, description: 'This is a dummy.')
         ]
         return parameters
     }
