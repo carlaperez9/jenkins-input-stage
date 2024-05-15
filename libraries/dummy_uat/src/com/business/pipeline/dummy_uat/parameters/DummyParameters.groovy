@@ -14,7 +14,7 @@ class DummyParameters implements Parameters {
     void create(){ 
         jenkinsSteps.println "[this will create the parameters for uat]"
 
-        if (currentBranch !== "main"){ 
+        if (currentBranch ==! "main"){ 
             jenkinsSteps.properties([
                 jenkinsSteps.parameters(addParameters())
             ])
