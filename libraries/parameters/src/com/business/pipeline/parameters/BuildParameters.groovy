@@ -21,6 +21,7 @@ class BuildParameters{
     @NonCPS
     private Parameters getParameters(jenkinsSteps){ 
         String returnedParameters = ""
+        def parameters
         jenkinsSteps.println "[INFO] Libraries: ${jenkinsSteps.pipelineConfig.libraries}"
         if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_dev")){ 
             returnedParameters = "com.business.pipeline.dummy_dev.parameters.DummyParameters"
@@ -28,7 +29,7 @@ class BuildParameters{
             returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
             // returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
-            returnedParameters = jenkinsSteps.println "No params"
+            parameters = jenkinsSteps.println "No params"
         } else { 
             jenkinsSteps.println "no params"
         }
