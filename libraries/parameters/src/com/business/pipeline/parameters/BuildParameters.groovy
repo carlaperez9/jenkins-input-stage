@@ -21,11 +21,11 @@ class BuildParameters{
         String returnedParameters = ""
         jenkinsSteps.println "[INFO] Libraries: ${jenkinsSteps.pipelineConfig.libraries}"
         if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_dev")){ 
-            returnedParameters = "dummy dev params"
+            returnedParameters = "com.business.pipeline.dummy_dev.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_prd")){ 
-            returnedParameters = "dummy prd params"
+            returnedParameters = "com.business.pipeline.dummy_prd.DummyParameter"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
-            returnedParameters = "dummy uat params"
+            returnedParameters = "com.business.pipeline.dummy_uat.DummyParameter"
         } else { 
             jenkinsSteps.println "no params"
         }
