@@ -1,4 +1,4 @@
-package com.business.pipeline.dummy_uat 
+package com.business.pipeline.dummy_uat.parameters
 
 class DummyParameters implements Parameters { 
 

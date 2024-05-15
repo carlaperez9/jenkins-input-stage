@@ -1,4 +1,4 @@
-package com.business.pipeline.dummy_dev
+package com.business.pipeline.dummy_dev.parameters
 
 class DummyParameters implements Parameters { 
 
