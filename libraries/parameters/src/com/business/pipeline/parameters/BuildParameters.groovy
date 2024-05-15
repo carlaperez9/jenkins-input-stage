@@ -23,9 +23,9 @@ class BuildParameters{
         if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_dev")){ 
             returnedParameters = "com.business.pipeline.dummy_dev.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_prd")){ 
-            returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameter"
+            returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
-            returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameter"
+            returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
         } else { 
             jenkinsSteps.println "no params"
         }
