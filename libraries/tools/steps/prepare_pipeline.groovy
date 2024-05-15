@@ -4,7 +4,7 @@ def call(){
     stage("Prepare Pipeline"){ 
 
         PreparePipeline preparePipeline = new PreparePipeline(this)
-        pipeline.prepare()
+        preparePipeline.prepare()
 
     }
 }
