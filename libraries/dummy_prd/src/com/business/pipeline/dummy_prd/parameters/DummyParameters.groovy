@@ -1,4 +1,5 @@
 package com.business.pipeline.dummy_prd.parameters
+import com.business.pipeline.parameters.Parameters
 
 class DummyParameters implements Parameters { 
 

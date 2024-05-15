@@ -1,5 +1,5 @@
 package com.business.pipeline.dummy_uat.parameters
-
+import com.business.pipeline.parameters.Parameters
 
 class DummyParameters implements Parameters { 
 
