@@ -33,7 +33,7 @@ class BuildParameters{
         }
         Parameters parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
         jenkinsSteps.println "parameters class: ${parameters}"
-        return returnedParameters
+        return parameters
     }
  
 }
