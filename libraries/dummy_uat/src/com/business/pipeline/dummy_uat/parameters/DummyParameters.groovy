@@ -4,6 +4,7 @@ import com.business.pipeline.parameters.Parameters
 class DummyParameters implements Parameters { 
 
     def jenkinsSteps 
+    def currentBranch = jenkinsSteps.env.BRANCH_NAME.toLowerCase()
  
 
     DummyParameters(jenkinsSteps){
