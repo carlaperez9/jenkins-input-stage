@@ -3,18 +3,21 @@ package com.business.pipeline.parameters
 class BuildParameters{
 
     def jenkinsSteps 
+    Parameters param
 
 
     BuildParameters(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
+        this.param = this.getParameters(jenkinsSteps)
     }
 
     def create(){ 
         jenkinsSteps.println "[INFO] Created parameters"
-        getParameters(jenkinsSteps)
+        this.param.create()
     }
-
-    def getParameters(jenkinsSteps){ 
+    // TODO: dynamically load the parameters for each class 
+    @NonCPS
+    private Parameters getParameters(jenkinsSteps){ 
         String returnedParameters = ""
         jenkinsSteps.println "[INFO] Libraries: ${jenkinsSteps.pipelineConfig.libraries}"
         if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_dev")){ 
@@ -26,6 +29,8 @@ class BuildParameters{
         } else { 
             jenkinsSteps.println "no params"
         }
+        Parameters parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
+        jenkinsSteps.println "parameters class: ${parameters}"
         return returnedParameters
     }
  
