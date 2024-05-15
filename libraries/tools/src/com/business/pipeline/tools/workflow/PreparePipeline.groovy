@@ -1,4 +1,4 @@
-package com.bppr.business.pipeline.tools.workflow 
+package com.business.pipeline.tools.workflow 
 
 class PreparePipeline { 
 
