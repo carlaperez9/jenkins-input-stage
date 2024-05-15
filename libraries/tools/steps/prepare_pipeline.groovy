@@ -1,4 +1,4 @@
-import com.business.pipeline.tools.PreparePipeline
+import com.business.pipeline.tools.workflow.PreparePipeline
 
 def call(){ 
     stage("Prepare Pipeline"){ 
