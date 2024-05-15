@@ -17,9 +17,10 @@ class DummyParameters implements Parameters {
         jenkinsSteps.println "currentBranch == main? ${currentBranch.equals("main")}"
 
         if (currentBranch != "main"){ 
-            jenkinsSteps.properties([
-                jenkinsSteps.parameters(addParameters())
-            ])
+            jenkinsSteps.println "This build does not require parameters."
+            // jenkinsSteps.properties([
+            //     jenkinsSteps.parameters(addParameters())
+            // ])
         }
     }
         
