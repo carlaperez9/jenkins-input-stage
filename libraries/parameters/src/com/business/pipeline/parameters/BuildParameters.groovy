@@ -27,10 +27,8 @@ class BuildParameters{
             returnedParameters = "com.business.pipeline.dummy_dev.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_prd")){ 
             returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
-        } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
-            returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
         } else { 
-            jenkinsSteps.println "no params"
+            parameters = jenkinsSteps.println "no params"
         }
         parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
         jenkinsSteps.println "parameters class: ${parameters}"
