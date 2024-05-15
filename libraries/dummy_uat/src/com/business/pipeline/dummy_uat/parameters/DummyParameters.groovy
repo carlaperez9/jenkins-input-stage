@@ -14,10 +14,9 @@ class DummyParameters implements Parameters {
         jenkinsSteps.println "[this will create the parameters for uat]"
 
         jenkinsSteps.properties([ jenkinsSteps.parameters(addParameters())])
-        
+
         }
         
-    }
 
     def addParameters(){ 
         def parameters = []
