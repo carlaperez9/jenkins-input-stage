@@ -27,7 +27,8 @@ class BuildParameters{
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_prd")){ 
             returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
-            returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
+            // returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
+            returnedParameters = jenkinsSteps.println "No params"
         } else { 
             jenkinsSteps.println "no params"
         }
