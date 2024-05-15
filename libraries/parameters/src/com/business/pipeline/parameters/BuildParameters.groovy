@@ -1,5 +1,7 @@
 package com.business.pipeline.parameters
 
+import com.business.pipeline.parameters.Parameters
+
 class BuildParameters{
 
     def jenkinsSteps 
