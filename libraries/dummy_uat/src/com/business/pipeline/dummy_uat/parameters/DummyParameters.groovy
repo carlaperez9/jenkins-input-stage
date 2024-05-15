@@ -23,8 +23,7 @@ class DummyParameters implements Parameters {
         
 
     def addParameters(){ 
-         def parameters = [
-        ]
+         def parameters = jenkinsSteps.println "This build does not require parameters."
         return parameters
     }
 
