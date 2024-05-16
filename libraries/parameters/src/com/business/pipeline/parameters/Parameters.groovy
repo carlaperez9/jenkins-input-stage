@@ -1,8 +1,8 @@
 package com.business.pipeline.parameters
 
 interface Parameters{ 
-    
-    void create()
+
+    default void create()
     
     static void removeParameters(){ 
         jenkinsSteps.println "[inside-removeparams]"
