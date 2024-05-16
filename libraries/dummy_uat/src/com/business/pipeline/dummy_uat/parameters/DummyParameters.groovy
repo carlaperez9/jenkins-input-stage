@@ -11,8 +11,22 @@ class DummyParameters extends DummyMgmt implements Parameters {
     }
 
     void create(){ 
-        jenkinsSteps.println "[This build does not require parameters-Create]"
-        super.removeParameters()
+        // jenkinsSteps.println "[This build does not require parameters-Create]"
+
+        jenkinsSteps.println "[recreating error]"
+        
+        jenkinsSteps.properties([
+            jenkinsSteps.parameters(addParameters())
+        ])
+
+        // super.removeParameters()
+    }
+
+    def addParameters(){ 
+        def parameters = [
+            jenkinsSteps.booleanParam(name: 'working_parameters', defaultValue: false, description: 'This is a dummy.')
+        ]
+        return parameters
     }
 
 
