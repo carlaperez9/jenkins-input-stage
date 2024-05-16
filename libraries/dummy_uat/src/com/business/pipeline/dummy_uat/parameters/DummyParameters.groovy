@@ -12,6 +12,7 @@ class DummyParameters extends DummyMgmt implements Parameters {
 
     void create(){ 
         jenkinsSteps.println "[This build does not require parameters-Create]"
+        super.removeParameters()
     }
 
 
