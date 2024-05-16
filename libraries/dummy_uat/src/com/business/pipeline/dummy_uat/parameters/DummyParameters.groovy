@@ -14,18 +14,7 @@ class DummyParameters implements Parameters {
     void create(){ 
         jenkinsSteps.println "[recreating error]"
 
-        if ((currentBranch == "main")){ 
-            jenkinsSteps.properties([
-                jenkinsSteps.parameters(addParameters())
-            ])
-        } 
     }
 
-     def addParameters(){ 
-        def parameters = [
-            jenkinsSteps.booleanParam(name: 'working_parameters', defaultValue: false, description: 'This is a dummy.')
-        ]
-        return parameters
-    }
 
 }

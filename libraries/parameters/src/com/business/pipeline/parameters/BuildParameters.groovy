@@ -27,8 +27,6 @@ class BuildParameters{
             returnedParameters = "com.business.pipeline.dummy_dev.parameters.DummyParameters"
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_prd")){ 
             returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
-        } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
-            returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
         } else { 
             jenkinsSteps.println "[INFO] This build does not require parameters."
             parameters = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
