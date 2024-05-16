@@ -12,9 +12,20 @@ class DummyParameters implements Parameters {
     }
 
     void create(){ 
-        jenkinsSteps.println "this build does not require parameters"
-        // def job = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
-        // job.removeProperty(ParametersDefinitionProperty.class)
+        jenkinsSteps.println "[recreating error]"
+
+        if ((currentBranch == "main")){ 
+            jenkinsSteps.properties([
+                jenkinsSteps.parameters(addParameters())
+            ])
+        } 
+    }
+
+     def addParameters(){ 
+        def parameters = [
+            jenkinsSteps.booleanParam(name: 'working_parameters', defaultValue: false, description: 'This is a dummy.')
+        ]
+        return parameters
     }
 
 }

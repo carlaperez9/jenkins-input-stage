@@ -30,7 +30,9 @@ class BuildParameters{
         } else if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_uat")){
             returnedParameters = "com.business.pipeline.dummy_uat.parameters.DummyParameters"
         } else { 
-            parameters = jenkinsSteps.println "no params"
+            jenkinsSteps.println "[INFO] This build does not require parameters."
+            def parameters = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
+            parameters.removeProperty(ParametersDefinitionProperty.class)
         }
         parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
         jenkinsSteps.println "parameters class: ${parameters}"
