@@ -11,15 +11,15 @@ class DummyParameters extends DummyMgmt implements Parameters {
     }
 
     void create(){ 
-        // jenkinsSteps.println "[This build does not require parameters-Create]"
+        jenkinsSteps.println "[This build does not require parameters-Create]"
 
-        jenkinsSteps.println "[recreating error]"
+        // jenkinsSteps.println "[recreating error]"
         
-        jenkinsSteps.properties([
-            jenkinsSteps.parameters(addParameters())
-        ])
+        // jenkinsSteps.properties([
+        //     jenkinsSteps.parameters(addParameters())
+        // ])
 
-        // super.removeParameters()
+        super.removeParameters()
     }
 
     def addParameters(){ 
