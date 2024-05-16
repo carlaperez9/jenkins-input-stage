@@ -13,8 +13,8 @@ class DummyParameters implements Parameters {
 
     void create(){ 
         jenkinsSteps.println "this build does not require parameters"
-        def job = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
-        job.removeProperty(ParametersDefinitionProperty.class)
+        // def job = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
+        // job.removeProperty(ParametersDefinitionProperty.class)
     }
 
 }
