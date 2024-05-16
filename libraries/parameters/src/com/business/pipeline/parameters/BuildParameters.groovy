@@ -20,8 +20,9 @@ class BuildParameters{
     // TODO: dynamically load the parameters for each class 
     @NonCPS
     private Parameters getParameters(jenkinsSteps){ 
-        String returnedParameters = ""
-        def parameters
+        String returnedParameters = null 
+        def parameters = null
+
         jenkinsSteps.println "[INFO] Libraries: ${jenkinsSteps.pipelineConfig.libraries}"
         if (jenkinsSteps.pipelineConfig.libraries.containsKey("dummy_dev")){ 
             returnedParameters = "com.business.pipeline.dummy_dev.parameters.DummyParameters"
@@ -29,11 +30,16 @@ class BuildParameters{
             returnedParameters = "com.business.pipeline.dummy_prd.parameters.DummyParameters"
         } else { 
             jenkinsSteps.println "[INFO] This build does not require parameters."
-            parameters = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
-            parameters.removeProperty(ParametersDefinitionProperty.class)
+            def job = Jenkins.instance.getItemByFullName(jenkinsSteps.env.JOB_NAME)
+            job.removeProperty(ParametersDefinitionProperty.class)
         }
-        parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
-        jenkinsSteps.println "parameters class: ${parameters}"
+
+        if (returnedParameters != null){ 
+            parameters = jenkinsSteps.class.classLoader.loadClass(returnedParameters).newInstance(jenkinsSteps) as Parameters
+            jenkinsSteps.println "parameters class: ${parameters}"
+        }
+
+
         return parameters
     }
  
