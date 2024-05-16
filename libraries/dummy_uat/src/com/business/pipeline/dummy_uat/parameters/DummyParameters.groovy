@@ -7,7 +7,7 @@ class DummyParameters extends DummyMgmt implements Parameters {
     def jenkinsSteps 
 
     DummyParameters(jenkinsSteps){
-        super.jenkinsSteps = jenkinsSteps 
+        this.jenkinsSteps = jenkinsSteps 
     }
 
     void create(){ 
