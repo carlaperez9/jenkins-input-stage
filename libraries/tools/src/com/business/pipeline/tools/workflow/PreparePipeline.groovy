@@ -10,7 +10,7 @@ class PreparePipeline {
 
     def prepare(){ 
         jenkinsSteps.println "[INFO] Preparing pipeline"
-        jenkinsSteps.build_parameters(jenkinsSteps)
+        jenkinsSteps.build_parameters()
         jenkinsSteps.println "[INFO] End of prepare pipeline"
     }
 }
