@@ -1,6 +1,7 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
+    def submitters = "Fidelino" 
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
@@ -15,7 +16,7 @@ class ReleaseDetails{
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
-        def submitters = "Fidelino" 
+        
 
         try { 
         // Using the input step within an input block
