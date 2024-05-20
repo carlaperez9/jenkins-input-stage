@@ -32,7 +32,7 @@ class ReleaseDetails{
                 submitterParameter: "approvedBy"
             )            
         } 
-        jenkinsSteps.println "approved by: ${releaseTimeout.submitterParameter}"
+        jenkinsSteps.println "approved by: ${releaseTimeout}"
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
     }
