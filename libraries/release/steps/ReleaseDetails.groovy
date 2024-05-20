@@ -35,6 +35,10 @@ class ReleaseDetails{
         } 
         jenkinsSteps.println "approved by: ${releaseTimeout.approvedBy}"
 
+        if (releaseTimeout.approvedBy != submitters){ 
+            jenkinsSteps.println "THIS SHOULD THROW AN ERROR"
+        }
+
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
     }
