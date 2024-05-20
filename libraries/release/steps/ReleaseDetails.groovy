@@ -30,15 +30,11 @@ class ReleaseDetails{
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                     jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
                 ], 
-                submitter: "${submitters}", 
                 submitterParameter: "approvedBy"
             )            
         } 
-        jenkinsSteps.println "approved by: ${releaseTimeout}"
+        jenkinsSteps.println "approved by: ${releaseTimeout.approvedBy}"
 
-        if (releaseTimeout.submitterParameter != submitter){ 
-            throw new Exception()
-        }
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
     }
