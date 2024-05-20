@@ -19,7 +19,7 @@ class ReleaseDetails{
         try { 
         // Using the input step within an input block
         def input 
-        def releaseTimeout = jenkinsSteps.timeout(time: 5, unit: 'SECONDS'){ 
+        def releaseTimeout = jenkinsSteps.timeout(time: 5, unit: 'MINUTES'){ 
                 jenkinsSteps.input(
                 ok: 'Confirm', // Specify an ID for the input step
                 message: "${messageRelease}",
