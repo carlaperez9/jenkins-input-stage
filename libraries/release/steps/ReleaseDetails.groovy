@@ -15,6 +15,7 @@ class ReleaseDetails{
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
+        def submitter = "Carla Perez"
 
         try { 
         // Using the input step within an input block
@@ -33,6 +34,10 @@ class ReleaseDetails{
             )            
         } 
         jenkinsSteps.println "approved by: ${releaseTimeout}"
+
+        if (releaseTimeout.submitterParameter != submitter){ 
+            throw new Exception()
+        }
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
     }
