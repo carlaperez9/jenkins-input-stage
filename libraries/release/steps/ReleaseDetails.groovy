@@ -15,7 +15,7 @@ class ReleaseDetails{
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
-        def submitter = "Carla Perez"
+        def submitters = ["Carla Perez", "Fidelino"]
 
         try { 
         // Using the input step within an input block
@@ -29,7 +29,7 @@ class ReleaseDetails{
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                     jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
                 ], 
-                submitter: "Carla Perez", 
+                submitter: submitters, 
                 submitterParameter: "approvedBy"
             )            
         } 
