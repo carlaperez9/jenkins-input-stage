@@ -27,7 +27,8 @@ class ReleaseDetails{
                     jenkinsSteps.string(name: "title", defaultValue:"", description: "My Title Goes Here. Choices are next."),
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                     jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
-                ]
+                ], 
+                submitter: "Carla Perez"
             )            
         } 
     } catch (Exception e){ 
