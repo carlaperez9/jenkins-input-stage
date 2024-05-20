@@ -15,7 +15,7 @@ class ReleaseDetails{
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
-        def submitters = ["Carla Perez", "Fidelino"]
+        def submitters = "Fidelino" 
 
         try { 
         // Using the input step within an input block
