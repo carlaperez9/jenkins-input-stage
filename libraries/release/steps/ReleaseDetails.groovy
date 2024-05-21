@@ -1,7 +1,7 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
-    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter
+    def submitters = jenkinsSteps.pipelineConfig.approved_submitter
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
@@ -32,7 +32,6 @@ class ReleaseDetails{
                 parameters: [
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                 ], 
-                submitter: "$submitters",
                 submitterParameter: "approvedBy"
             )            
         } 
@@ -40,7 +39,7 @@ class ReleaseDetails{
         jenkinsSteps.println "approvedBy: ${releaseTimeout.approvedBy}"
 
         if (releaseTimeout.approvedBy != submitters){ 
-            jenkinsSteps.println "THIS SHOULD THROW AN ERROR"
+            throw new Exception("Unauthorized user attempted to approve the release.")
         }
 
     } catch (Exception e){ 
