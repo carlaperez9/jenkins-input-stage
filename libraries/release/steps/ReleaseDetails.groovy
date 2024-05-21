@@ -30,7 +30,7 @@ class ReleaseDetails{
                 parameters: [
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                 ], 
-                submitter: "$submitter"
+                submitter: "$submitter",
                 submitterParameter: "approvedBy"
             )            
         } 
