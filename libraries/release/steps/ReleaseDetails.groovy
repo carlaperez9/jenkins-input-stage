@@ -30,7 +30,7 @@ class ReleaseDetails{
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                     jenkinsSteps.string(name: 'A String Goes Here', defaultValue: "", description: "We can place a description here")
                 ], 
-                submitter: "Carla"
+                submitter: "Carla",
                 submitterParameter: "approvedBy"
             )            
         } 
