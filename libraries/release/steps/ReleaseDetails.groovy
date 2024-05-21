@@ -35,7 +35,7 @@ class ReleaseDetails{
             )            
         } 
         jenkinsSteps.println "submitters: ${releaseTimeout.submitters}"
-        jenkinsSteps.println "approvedBy: ${approvedBy}"
+        jenkinsSteps.println "approvedBy: ${releaseTimeout.approvedBy}"
 
         if (releaseTimeout.approvedBy != submitters){ 
             jenkinsSteps.println "THIS SHOULD THROW AN ERROR"
