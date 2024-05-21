@@ -15,6 +15,8 @@ class ReleaseDetails{
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
 
+        jenkinsSteps.println "submitters ${submitters}"
+
         
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
         reverseOrder()
