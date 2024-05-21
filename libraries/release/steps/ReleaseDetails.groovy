@@ -32,13 +32,13 @@ class ReleaseDetails{
                 parameters: [
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                 ], 
-                submitterParameter: "approvedBy"
+                submitterParameter: "approver"
             )            
         } 
 
-        jenkinsSteps.println "approvedBy: ${releaseTimeout.submitterParameter}"
+        jenkinsSteps.println "approvedBy: ${releaseTimeout.approver}"
 
-        if (!submitters.contains(approvedBy)){ 
+        if (!submitters.contains(approver)){ 
             throw new Exception("Unauthorized user attempted to approve the release.")
         }
 
