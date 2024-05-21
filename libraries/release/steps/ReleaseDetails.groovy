@@ -38,7 +38,7 @@ class ReleaseDetails{
         jenkinsSteps.println "submitters: ${releaseTimeout.submitters}"
         jenkinsSteps.println "approvedBy: ${releaseTimeout.approvedBy}"
 
-        if (releaseTimeout.approvedBy != submitters){ 
+        if (!submitters.contains(approvedBy)){ 
             throw new Exception("Unauthorized user attempted to approve the release.")
         }
 
