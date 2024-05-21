@@ -31,7 +31,8 @@ class ReleaseDetails{
                 message: "${messageRelease}",
                 parameters: [
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
-                ], 
+                ],  
+                submitter: 'Carla Perez'
                 submitterParameter: "approver"
             )            
         } 
@@ -44,9 +45,7 @@ class ReleaseDetails{
 
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
-    }
-
-   
+    } 
  
 }
  def reverseOrder(){ 
