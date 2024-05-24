@@ -1,7 +1,7 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
-    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter
+    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter.toString()
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
@@ -32,8 +32,8 @@ class ReleaseDetails{
                 parameters: [
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                 ],  
-                // submitter: 'Carla Perez',
-                submitterParameter: "approver"
+                submitter: 'Carla Perez',
+                // submitterParameter: "approver"
             )            
         } 
 
