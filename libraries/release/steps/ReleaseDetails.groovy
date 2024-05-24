@@ -37,9 +37,6 @@ class ReleaseDetails{
             )            
         } 
 
-        if (!submitters.contains(releaseTimeout.approver)){ 
-            throw new Exception("Unauthorized user attempted to approve the release.")
-        }
 
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
