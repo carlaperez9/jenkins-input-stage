@@ -1,7 +1,7 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
-    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter.flatten()
+    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter.flatten().toString()
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
