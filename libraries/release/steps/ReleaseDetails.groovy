@@ -12,8 +12,7 @@ class ReleaseDetails{
     
         try { 
         
-        def releaseDetails = releaseDetails()
-        setEnvironmentVariables(releaseDetails)
+        releaseDetails()
 
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
