@@ -37,7 +37,7 @@ class ReleaseDetails{
 } 
     }
     def setEnvironmentVariables(releaseDetails){ 
-        jenkinsSteps.env.RELEASE_DETAILS        = releaseTimeout
+        jenkinsSteps.env.RELEASE_DETAILS        = releaseDetails
         def (applicationName, version)          = releaseDetails.split('-')
         jenkinsSteps.env.applicationName        = applicationName 
         jenkinsSteps.env.applicationVersion     = version 
