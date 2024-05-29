@@ -32,10 +32,10 @@ class ReleaseDetails{
         parameters: [
             jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
         ],  
-    )    
-    return releaseTimeout        
-} 
-    }
+    )          
+    } 
+     return releaseTimeout  
+}
     def setEnvironmentVariables(releaseDetails){ 
         jenkinsSteps.env.RELEASE_DETAILS        = releaseDetails
         def (applicationName, version)          = releaseDetails.split('-')
