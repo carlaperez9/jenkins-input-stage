@@ -1,7 +1,6 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
-    def submitters = jenkinsSteps.pipelineConfig.submitters.approved_submitter.flatten().toString()
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
@@ -14,8 +13,6 @@ class ReleaseDetails{
         def myUnsortedChoices = ['4.1.0', '4.2.2', '4.3.1', '0.1.0', '0.1.1', '0.1.2']
         def message = "This is my message."
         def messageRelease = "RELEASE_VERSION_GOES_HERE"
-
-        jenkinsSteps.println "submitters ${submitters}"
 
         
         // def mySortedChoices = reverseOrder(myUnsortedChoices)
