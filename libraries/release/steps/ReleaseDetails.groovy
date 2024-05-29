@@ -33,6 +33,8 @@ class ReleaseDetails{
             )            
         } 
 
+        jenkinsSteps.env.RELEASE_TIMEOUT = releaseTimeout
+
 
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
