@@ -9,10 +9,17 @@ class ReleaseDetails{
 
     void run() {
         jenkinsSteps.println "Running release details"
+
+        def appNameVersion = "my-application-name-0.1.1"
+        
+        def (applicationName, version) = appNameVersion.split('-')
+        
+        jenkinsSteps.println "applciationName = ${applicationName}"
+        jenkinsSteps.println "version = ${version}"
     
         try { 
         
-        releaseDetails()
+        releaseDetails() 
 
     } catch (Exception e){ 
         jenkinsSteps.println "${e.getMessage()}"
@@ -38,10 +45,10 @@ class ReleaseDetails{
      
 }
     def setEnvironmentVariables(releaseDetails){ 
-        jenkinsSteps.env.RELEASE_DETAILS        = releaseDetails
-        def (applicationName, version)          = releaseDetails.split('-')
-        jenkinsSteps.env.applicationName        = applicationName 
-        jenkinsSteps.env.applicationVersion     = version 
+        jenkinsSteps.env.RELEASE_DETAILS_PACKAGE    = releaseDetails
+        def (applicationName, version)              = releaseDetails.split('-')
+        jenkinsSteps.env.applicationName            = applicationName 
+        jenkinsSteps.env.applicationVersion         = version 
     }
 
  def reverseOrder(){ 
