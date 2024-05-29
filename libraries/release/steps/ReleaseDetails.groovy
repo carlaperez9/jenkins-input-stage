@@ -34,7 +34,7 @@ class ReleaseDetails{
         ],  
     )          
     } 
-    return releaseDetails
+    return releaseTimeout
      
 }
     def setEnvironmentVariables(releaseDetails){ 
