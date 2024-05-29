@@ -34,7 +34,9 @@ class ReleaseDetails{
         ],  
     )          
     } 
-     return releaseTimeout  
+
+    setEnvironmentVariables(releaseTimeout)
+     
 }
     def setEnvironmentVariables(releaseDetails){ 
         jenkinsSteps.env.RELEASE_DETAILS        = releaseDetails
