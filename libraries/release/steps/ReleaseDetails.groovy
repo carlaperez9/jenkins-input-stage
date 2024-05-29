@@ -16,7 +16,7 @@ class ReleaseDetails{
         def appName = appNameVersion(0, lastHyphenIndex)
         def version = appNameVersion(lastHyphenIndex + 1) 
         
-        jenkinsSteps.println "applciationName = ${applicationName}"
+        jenkinsSteps.println "applciationName = ${appName}"
         jenkinsSteps.println "version = ${version}"
     
         try { 
