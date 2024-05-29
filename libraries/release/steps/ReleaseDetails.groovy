@@ -30,7 +30,6 @@ class ReleaseDetails{
                     jenkinsSteps.choice(name: "First choice", choices: myUnsortedChoices, description: "This is the first choice."), 
                     jenkinsSteps.choice(name: "Second choice", choices: myUnsortedChoices, description: "This is the second choice."), 
                 ],  
-                submitter: submitters,
             )            
         } 
 
