@@ -1,6 +1,7 @@
 class ReleaseDetails{ 
 
     def jenkinsSteps 
+    def releaseTimeout 
 
     ReleaseDetails(jenkinsSteps){ 
         this.jenkinsSteps = jenkinsSteps 
