@@ -10,7 +10,10 @@ class PreparePipeline {
 
     def prepare(){ 
         jenkinsSteps.println "[INFO] Preparing pipeline"
-        // jenkinsSteps.build_parameters()
+        
+        // read config.yaml file 
+        def yaml = readYaml file: config.yaml
+
         jenkinsSteps.println "[INFO] End of prepare pipeline"
     }
 }
